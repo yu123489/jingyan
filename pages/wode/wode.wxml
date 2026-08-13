@@ -1,0 +1,75 @@
+<view class="container">
+  
+  <!-- 顶部：用户基本信息区 -->
+  <!-- 点击整个区域都可以跳转到修改资料页 -->
+  <view class="user-info-section" bindtap="navigateTo" data-url="/pages/profile/profile">
+    <image class="avatar" src="{{userInfo.avatarUrl || '../../images/default_avatar.png'}}" mode="aspectFill"></image>
+    <view class="user-details">
+      <text class="username">{{userInfo.nickName || '点击登录/注册'}}</text>
+    </view>
+    <view class="arrow-icon">></view>
+  </view>
+
+  <!-- 中部：核心数据看板 -->
+  <view class="stats-board">
+    <view class="stat-item" bindtap="navigateTo" data-url="/pages/checkin/checkin">
+      <text class="stat-value">{{userInfo.checkins || 0}}</text>
+      <text class="stat-label">打卡记录</text>
+    </view>
+    <view class="stat-item" bindtap="navigateTo" data-url="/pages/points/points">
+      <text class="stat-value">{{userInfo.points || 0}}</text>
+      <text class="stat-label">井盐结晶积分</text>
+    </view>
+    <view class="stat-item" bindtap="navigateTo" data-url="/pages/collection/collection">
+      <text class="stat-value">{{userInfo.collections || 0}}</text>
+      <text class="stat-label">收藏文物</text>
+    </view>
+  </view>
+
+  <!-- 底部：其他工具列表 -->
+  <view class="tools-section">
+    <view class="tools-title">其他工具</view>
+    <view>________________________________________________</view>
+    
+    <view class="tool-list">
+      <!-- 常规页面跳转 -->
+      <view class="tool-item" bindtap="navigateTo" data-url="/pages/profile/profile">
+        <text class="tool-name">修改资料</text>
+        <text class="arrow-icon">></text>
+      </view>
+      <view class="tool-item" bindtap="navigateTo" data-url="/pages/service/service">
+        <text class="tool-name">场馆服务</text>
+        <text class="arrow-icon">></text>
+      </view>
+      <view class="tool-item" bindtap="navigateTo" data-url="/pages/achievements/achievements">
+        <text class="tool-name">我的成就</text>
+        <text class="arrow-icon">></text>
+      </view>
+      
+      <!-- 微信原生能力：分享 (必须使用 button 标签) -->
+      <button class="tool-item native-btn" open-type="share">
+        <text class="tool-name">分享小程序</text>
+        <text class="arrow-icon">></text>
+      </button>
+      
+      <!-- 微信原生能力：意见反馈 -->
+      <button class="tool-item native-btn" open-type="feedback">
+        <text class="tool-name">意见反馈</text>
+        <text class="arrow-icon">></text>
+      </button>
+      
+      <!-- 微信原生能力：联系客服 -->
+      <button class="tool-item native-btn" open-type="contact">
+        <text class="tool-name">联系客服</text>
+        <text class="arrow-icon">></text>
+      </button>
+      
+      <!-- 常规页面跳转 -->
+      <view class="tool-item" bindtap="navigateTo" data-url="/pages/settings/settings">
+        <text class="tool-name">设置</text>
+        <text class="arrow-icon">></text>
+      </view>
+    </view>
+  </view>
+
+</view>

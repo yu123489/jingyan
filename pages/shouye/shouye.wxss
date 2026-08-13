@@ -1,0 +1,165 @@
+/* 页面整体背景和间距 */
+.container {
+  padding: 20rpx;
+  /* background-color: #f5f6f8;  */
+  min-height: 100vh;
+}
+
+/* --- 第一部分：顶部信息栏 --- */
+.location-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12rpx 20rpx;
+  background: linear-gradient(135deg, #f7f5f3 0%, #f5e9d4 100%);
+  border-radius: 28rpx;
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+  box-shadow: 0 4rpx 12rpx rgba(85, 68, 47, 0.06);
+}
+
+.location-inner {
+  display: flex;
+  align-items: center;
+}
+
+.ancient-icon {
+  font-size: 28rpx;
+  color: #8b5a2b; /* 沉稳的古铜/棕褐色 */
+  margin-right: 12rpx;
+}
+
+.city-name {
+  font-weight: bold;
+  font-size: 32rpx;
+  color: #3d3326; /* 墨黑带点古沉感 */
+  letter-spacing: 2rpx;
+}
+
+.ancient-suffix {
+  font-size: 24rpx;
+  color: #8c7b65;
+  margin-left: 10rpx;
+}
+
+.ancient-tag {
+  font-size: 24rpx;
+  color: #9e4722; /* 类似朱砂印泥的中国红/铁锈红 */
+  font-weight: 500;
+  letter-spacing: 2rpx;
+  background-color: #f7ede2;
+  padding: 6rpx 16rpx;
+  border-radius: 4rpx;
+  border: 1rpx solid #e6d2be;
+}
+
+/* --- 第二部分：动态 Banner --- */
+.banner-section {
+  width: 100%;
+  height: 440rpx;
+  margin-bottom: 24rpx;
+  border-radius: 16rpx;
+  overflow: hidden; /* 保证圆角生效 */
+  background-color: #ffffff;
+}
+.banner-swiper {
+  width: 100%;
+  height: 100%;
+}
+.banner-img {
+  width: 100%;
+  height: 100%;
+  background-color: #e0e0e0;
+}
+
+/* --- 第三部分：三大功能入口 --- */
+.nav-grid {
+  display: flex;
+  justify-content: space-between; 
+  padding: 30rpx 20rpx; 
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  margin-bottom: 24rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.02);
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1; 
+}
+
+.circle {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%; 
+  background-color: #f0f0f0; 
+  margin-bottom: 12rpx;
+}
+
+.grid-item text {
+  font-size: 24rpx;
+  color: #444;
+  text-align: center; 
+  white-space: nowrap; 
+}
+
+/* --- 第四部分：横滑时空长卷 --- */
+.card-container {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  /* 确保卡片本身不超出屏幕且不滚动 */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: left;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20rpx;
+}
+
+.scroll-area {
+  width: 100%;
+  /* 设定一个合适的高度，或者由外层决定 */
+  height: 400rpx; 
+  white-space: nowrap; /* 强制内部元素不换行，这是横滑的关键 */
+}
+
+.long-image {
+  height: 100%; /* 让图片高度撑满容器，宽度自动延展 */
+  display: inline-block; /* 配合 nowrap 使用 */
+    /* width: 500rpx;  */
+    background-color: #e5e5e5; /* 【临时添加】灰色背景，让你看清滑动的边界 */
+    margin-right: 10rpx; /* 色块之间的细微间距，填入真实长图时可以改成 0 */
+}
+
+/* --- 第五部分：每日卡片 --- */
+.daily-card-section {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 40rpx;
+}
+.daily-card {
+  width: 100%;
+  min-height: 120rpx;
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.daily-text {
+  font-size: 28rpx;
+  color: #555;
+  line-height: 1.6;
+}

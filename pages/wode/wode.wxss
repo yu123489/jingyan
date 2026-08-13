@@ -1,0 +1,139 @@
+/* 整体页面背景 */
+.container {
+  width: 100% !important; 
+  display: block !important; /* 【核心杀手锏】：彻底打断全局 app.wxss 里的 flex 居中魔法 */
+  
+  /* 左右 15rpx 控制你想要的边缘留白宽度，可随意微调 */
+  padding: 30rpx 15rpx; 
+  
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 顶部用户基本信息区 */
+.user-info-section {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 40rpx 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.03);
+}
+
+.avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  margin-right: 30rpx;
+  border: 4rpx solid #ffffff;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.1);
+}
+
+.user-details {
+  flex: 1; /* 撑开剩余空间 */
+}
+
+.username {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 中部核心数据看板 */
+.stats-board {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 30rpx 20rpx;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.03);
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 2rpx solid #f0f0f0;
+}
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-value {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #007aff;
+  margin-bottom: 10rpx;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: #666;
+}
+
+/* 底部工具列表 */
+.tools-section {
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  padding: 0 30rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.03);
+  margin-bottom: 80rpx;
+}
+
+.tools-title {
+  padding-right: 50%;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  padding: 30rpx 0 10rpx 0;
+}
+
+/* 单个工具条目 */
+.tool-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #f5f5f5;
+  background-color: transparent;
+}
+.tool-item:last-child {
+  border-bottom: none;
+}
+
+.tool-name {
+  font-size: 28rpx;
+  color: #333;
+}
+
+/* 消除 button 标签自带的默认恶心样式 */
+.native-btn {
+  background-color: transparent !important; 
+  padding: 30rpx 0 !important; 
+  margin: 0 !important; 
+  font-weight: normal !important; /* 强行剥夺加粗特权 */
+  width: 100% !important; 
+  
+  /* 【绝对核心修复区】 */
+  text-align: left !important; /* 强行靠左对齐 */
+  line-height: inherit !important; /* 强行剥夺原生奇葩行高 */
+  display: flex !important; /* 强行恢复 Flex 布局能力 */
+  justify-content: space-between !important; /* 让文字在左，箭头在右 */
+  align-items: center !important; /* 垂直居中对齐 */
+}
+
+/* 干掉按钮自带的灰色边框线 */
+.native-btn::after {
+  border: none !important; 
+}
+
+/* 统一的向右小箭头 */
+.arrow-icon {
+  font-size: 30rpx;
+  color: #ccc;
+  font-family: monospace; /* 保持箭头形状规整 */
+}

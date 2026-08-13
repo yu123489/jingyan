@@ -1,0 +1,32 @@
+<view class="login-container">
+  
+<image class="bg-image" src="../../images/login.png" mode="aspectFill"></image>
+
+  <!-- 上部：系统品牌视觉区 -->
+  <view class="brand-section">
+    <!-- 这里放你们系统的 Logo，暂时用默认图占位 -->
+    <!-- <image class="logo" src="../../images/logo.jpg" mode="aspectFit"></image> -->
+    <text class="app-name">寻盐记</text>
+    <text class="slogan">探索井盐文化 · 开启盐脉微纪元</text>
+  </view>
+
+  <!-- 下部：登录操作区 -->
+  <view class="action-section">
+    <!-- 微信原生快捷授权登录 (推荐) -->
+    <button class="btn-primary" bindtap="handleWechatLogin">
+      微信一键登录
+    </button>
+    
+    <!-- 传统账号密码/验证码登录入口 -->
+    <view class="btn-secondary" bindtap="handleAccountLogin">
+      账号/手机号登录
+    </view>
+  </view>
+
+  <!-- 底部：用户协议条款 -->
+  <view class="agreement-section">
+    <radio class="radio-btn" color="#007aff" checked="{{isAgreed}}" bindtap="toggleAgreement"></radio>
+    <text class="agreement-text">我已阅读并同意 <text class="link">《用户服务协议》</text> 与 <text class="link">《隐私政策》</text></text>
+  </view>
+
+</view>

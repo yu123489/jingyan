@@ -1,0 +1,36 @@
+<view class="container">
+
+<!-- 顶部：独立页面路由按钮 -->
+<view class="top-console">
+  <view class="top-btn" bindtap="navigateTo" data-url="/pages/points/points">我的积分</view>
+  <view class="top-btn" bindtap="navigateTo" data-url="/pages/checkin/checkin">打卡记录</view>
+</view>
+
+<!-- 中间：动态内容展示区 -->
+<view class="main-display-area">
+  <!-- 当 currentTab 为 'gudao' 时显示这块内容 -->
+  <view class="content-view" wx:if="{{currentTab === 'gudao'}}">
+    <view class="placeholder-box">
+      <text class="title">川盐古道</text>
+      <text class="subtitle">这里未来可以接入古道线路地图或位置坐标点</text>
+    </view>
+  </view>
+
+  <!-- 当 currentTab 为 'juluo' 时显示这块内容 -->
+  <view class="content-view" wx:if="{{currentTab === 'juluo'}}">
+    <view class="placeholder-box">
+      <text class="title">盐业聚落</text>
+      <text class="subtitle">这里未来可以渲染聚落的 3D 模型或全景图</text>
+    </view>
+  </view>
+</view>
+
+<!-- 底部：内容切换按钮 (注意避开底部的原生 tabbar) -->
+<view class="bottom-console">
+  <view class="bottom-btn {{currentTab === 'gudao' ? 'active' : ''}}" 
+        bindtap="switchTab" data-tab="gudao">川盐古道</view>
+  <view class="bottom-btn {{currentTab === 'juluo' ? 'active' : ''}}" 
+        bindtap="switchTab" data-tab="juluo">盐业聚落</view>
+</view>
+
+</view>
