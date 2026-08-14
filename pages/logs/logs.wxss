@@ -39,24 +39,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 200rpx;
+    margin-top: 250rpx;
   }
   
-  .logo {
-    width: 180rpx;
-    height: 180rpx;
-    border-radius: 40rpx;
-    box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.08);
-    margin-bottom: 30rpx;
-  }
   
   .app-name {
     font-family: 'myself', sans-serif;
-    font-size: 90rpx;
+    font-size: 100rpx;
     font-weight: bold;
     color: #333333;
     letter-spacing: 4rpx;
-    margin-bottom: 20rpx;
+    margin-bottom: 30rpx;
   }
   
   .slogan {
@@ -69,7 +62,7 @@
   .action-section {
     width: 100%;
     margin-top: auto; /* 将操作区推向底部 */
-    margin-bottom: 60rpx;
+    margin-bottom: 100rpx;
   }
   
   .btn-primary {

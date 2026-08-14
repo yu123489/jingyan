@@ -78,7 +78,7 @@
   display: flex;
   justify-content: space-between; 
   padding: 30rpx 20rpx; 
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #fcfbfa 0%, #EEE6CB 100%) !important;
   border-radius: 16rpx;
   margin-bottom: 24rpx;
   box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.02);
@@ -108,52 +108,95 @@
   white-space: nowrap; 
 }
 
-/* --- 第四部分：横滑时空长卷 --- */
-.card-container {
-  background-color: #ffffff;
+/* --- 第四部分：横滑时空长卷（大唐古风美化版） --- */
+.ancient-timeline-card {
+  /* 运用大唐米色底纹与精致的石青蓝边框 */
+  background: linear-gradient(135deg, #fcfbfa 0%, #EEE6CB 100%) !important;
   border-radius: 16rpx;
   padding: 24rpx;
-  /* 确保卡片本身不超出屏幕且不滚动 */
-  width: 100%;
+  margin-bottom: 24rpx;
   box-sizing: border-box;
+  box-shadow: 0 6rpx 16rpx rgba(67, 108, 133, 0.12);
 }
 
-.title {
-  text-align: left;
+/* 带有题签感的标题行 */
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  border-bottom: 2rpx dashed #d4c4a8;
+  padding-bottom: 12rpx;
+}
+
+.title-left {
+  display: flex;
+  align-items: center;
+}
+
+.title-icon {
+  font-size: 28rpx;
+  color: #B73F42; /* 朱砂红点缀 */
+  margin-right: 10rpx;
+}
+
+.title-text {
   font-size: 32rpx;
   font-weight: bold;
-  color: #333;
-  margin-bottom: 20rpx;
+  color: #436C85; /* 沉稳的石青蓝主标题 */
+  letter-spacing: 2rpx;
 }
 
+.title-right {
+  font-size: 24rpx;
+  color: #B73F42; /* 朱砂红印章风小标 */
+  font-weight: 500;
+  letter-spacing: 2rpx;
+  background-color: #f7ede2;
+  padding: 4rpx 12rpx;
+  border-radius: 4rpx;
+  border: 1rpx solid #e6d2be;
+}
+
+/* 横滑区域滚动框 */
 .scroll-area {
   width: 100%;
-  /* 设定一个合适的高度，或者由外层决定 */
-  height: 400rpx; 
-  white-space: nowrap; /* 强制内部元素不换行，这是横滑的关键 */
+  height: 420rpx; 
+  white-space: nowrap; 
+  border-radius: 12rpx;
+  background-color: #f4efe1;
+  border: 1rpx solid #dcd3b8;
 }
 
+/* 长卷图片呈现 */
 .long-image {
-  height: 100%; /* 让图片高度撑满容器，宽度自动延展 */
-  display: inline-block; /* 配合 nowrap 使用 */
-    /* width: 500rpx;  */
-    background-color: #e5e5e5; /* 【临时添加】灰色背景，让你看清滑动的边界 */
-    margin-right: 10rpx; /* 色块之间的细微间距，填入真实长图时可以改成 0 */
+  height: 100%; 
+  display: inline-block; 
+  background-color: #EEE6CB; 
+  border-radius: 8rpx;
 }
 
 /* --- 第五部分：每日卡片 --- */
 .daily-card-section {
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #fcfbfa 0%, #EEE6CB 100%) !important;
   border-radius: 16rpx;
   padding: 24rpx;
   margin-bottom: 40rpx;
 }
+
+.section-title{
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #436C85; /* 沉稳的石青蓝主标题 */
+  letter-spacing: 2rpx;
+}
+
 .daily-card {
   width: 100%;
   min-height: 120rpx;
   display: flex;
   align-items: center;
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
   border-radius: 12rpx;
   padding: 20rpx;
   box-sizing: border-box;

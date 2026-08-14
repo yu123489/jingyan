@@ -1,3 +1,6 @@
 {
+  "navigationBarTitleText": "寻盐记",
+  "navigationBarBackgroundColor": "#EEE6CB",
+  "navigationBarTextStyle": "black",
   "usingComponents": {}
 }

@@ -1,36 +1,60 @@
 <view class="container">
+  
+  <!-- 顶部控制区 -->
+  <view class="top-console">
+    <view class="top-btn" bindtap="navigateTo" data-url="/pages/points/points">我的积分</view>
+    <view class="top-btn" bindtap="navigateTo" data-url="/pages/checkin/checkin">打卡记录</view>
+  </view>
 
-<!-- 顶部：独立页面路由按钮 -->
-<view class="top-console">
-  <view class="top-btn" bindtap="navigateTo" data-url="/pages/points/points">我的积分</view>
-  <view class="top-btn" bindtap="navigateTo" data-url="/pages/checkin/checkin">打卡记录</view>
-</view>
+  <!-- 主展示区 -->
+  <view class="main-display-area">
+    <!-- 川盐古道大类下的四个分支内容 -->
+    <view class="content-view" wx:if="{{currentTab === 'gudao'}}">
+      <view class="placeholder-box" wx:if="{{currentSubTab === 'route1'}}">
+        <text class="title">川黔古道</text>
+        <text class="subtitle">这里未来可以接入马帮陆路古道地图</text>
+      </view>
+      <view class="placeholder-box" wx:if="{{currentSubTab === 'route2'}}">
+        <text class="title">川滇古道</text>
+        <text class="subtitle">这里未来可以接入釜溪河水路坐标点</text>
+      </view>
+      <view class="placeholder-box" wx:if="{{currentSubTab === 'route3'}}">
+        <text class="title">川湘古道</text>
+        <text class="subtitle">探索川盐古道与茶马古道的交汇处</text>
+      </view>
+      <view class="placeholder-box" wx:if="{{currentSubTab === 'route4'}}">
+        <text class="title">川鄂古道</text>
+        <text class="subtitle">探访沿途保留的盐商会馆与历史遗迹</text>
+      </view>
+    </view>
 
-<!-- 中间：动态内容展示区 -->
-<view class="main-display-area">
-  <!-- 当 currentTab 为 'gudao' 时显示这块内容 -->
-  <view class="content-view" wx:if="{{currentTab === 'gudao'}}">
-    <view class="placeholder-box">
-      <text class="title">川盐古道</text>
-      <text class="subtitle">这里未来可以接入古道线路地图或位置坐标点</text>
+    <!-- 盐业聚落内容 -->
+    <view class="content-view" wx:if="{{currentTab === 'juluo'}}">
+      <view class="placeholder-box">
+        <text class="title">盐业聚落</text>
+        <text class="subtitle">这里未来可以接入聚落3D模型展示</text>
+      </view>
     </view>
   </view>
 
-  <!-- 当 currentTab 为 'juluo' 时显示这块内容 -->
-  <view class="content-view" wx:if="{{currentTab === 'juluo'}}">
-    <view class="placeholder-box">
-      <text class="title">盐业聚落</text>
-      <text class="subtitle">这里未来可以渲染聚落的 3D 模型或全景图</text>
+  <!-- 底部控制区（包含滑出菜单和大按钮） -->
+  <view class="bottom-container">
+    
+    <!-- 悬浮的子菜单：四个古道分支 -->
+    <!-- 增加 data-name，方便 JS 拿到中文字符串 -->
+    <view class="sub-menu {{showSubMenu ? 'show' : ''}}">
+      <view class="sub-btn {{currentSubTab === 'route1' ? 'sub-active' : ''}}" bindtap="switchSubTab" data-sub="route1" data-name="川黔古道">川黔古道</view>
+      <view class="sub-btn {{currentSubTab === 'route2' ? 'sub-active' : ''}}" bindtap="switchSubTab" data-sub="route2" data-name="川滇古道">川滇古道</view>
+      <view class="sub-btn {{currentSubTab === 'route3' ? 'sub-active' : ''}}" bindtap="switchSubTab" data-sub="route3" data-name="川湘古道">川湘古道</view>
+      <view class="sub-btn {{currentSubTab === 'route4' ? 'sub-active' : ''}}" bindtap="switchSubTab" data-sub="route4" data-name="川鄂古道">川鄂古道</view>
     </view>
+
+    <!-- 底部两个常驻的大按钮 -->
+    <view class="bottom-console">
+      <!-- 这里的固定文字“川盐古道”换成动态变量 {{gudaoBtnText}} -->
+      <view class="bottom-btn {{currentTab === 'gudao' ? 'active' : ''}}" bindtap="switchTab" data-tab="gudao">{{gudaoBtnText}}</view>
+      <view class="bottom-btn {{currentTab === 'juluo' ? 'active' : ''}}" bindtap="switchTab" data-tab="juluo">盐业聚落</view>
+    </view>
+    
   </view>
-</view>
-
-<!-- 底部：内容切换按钮 (注意避开底部的原生 tabbar) -->
-<view class="bottom-console">
-  <view class="bottom-btn {{currentTab === 'gudao' ? 'active' : ''}}" 
-        bindtap="switchTab" data-tab="gudao">川盐古道</view>
-  <view class="bottom-btn {{currentTab === 'juluo' ? 'active' : ''}}" 
-        bindtap="switchTab" data-tab="juluo">盐业聚落</view>
-</view>
-
 </view>

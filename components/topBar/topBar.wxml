@@ -1,0 +1,7 @@
+<view class="top-landscape-header">
+  <image class="landscape-bg" src="/images/daohang.jpg" mode="aspectFill"></image>
+  <view class="nav-content">
+    <text class="ancient-icon">❖</text>
+    <text class="city-name">{{title || '寻盐记'}}</text>
+  </view>
+</view>

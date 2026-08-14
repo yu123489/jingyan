@@ -1,103 +1,143 @@
-/* 页面整体采用 Flex 纵向布局，高度撑满整个视口 */
+/* ================= 全局布局 ================= */
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    box-sizing: border-box;
-    /* 留出上下安全边距 */
-    padding: 30rpx 30rpx 40rpx 30rpx; 
-  }
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 30rpx 30rpx 40rpx 30rpx; /* 恢复内边距，防止内容贴边 */
+}
+
+/* ================= 顶部按钮 ================= */
+.top-console {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20rpx;
+  z-index: 10;
+}
+.top-btn {
+  background-color: #ffffff;
+  padding: 16rpx 40rpx;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05);
+  border: 2rpx solid #eaeaea;
+}
+
+/* ================= 主展示区 ================= */
+.main-display-area {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20rpx;
+  background-color: #e8ebf0;
+  box-shadow: inset 0 4rpx 20rpx rgba(0,0,0,0.05);
+}
+.content-view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.placeholder-box {
+  text-align: center;
+  padding: 40rpx;
+}
+.placeholder-box .title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 20rpx;
+}
+.placeholder-box .subtitle {
+  display: block;
+  font-size: 26rpx;
+  color: #888;
+}
+
+/* ================= 底部容器与子菜单悬浮 ================= */
+.bottom-container {
+  position: relative;
+  width: 100%;
+  margin-top: 20rpx;
+  z-index: 99;
+}
+
+.bottom-console {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  z-index: 100; /* 层级最高，防止被遮挡 */
+}
+
+.bottom-btn {
+  flex: 1;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 24rpx 0;
+  border-radius: 12rpx;
+  font-size: 30rpx;
+  color: #333;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05);
+  transition: all 0.2s;
+}
+.bottom-btn:first-child {
+  margin-right: 30rpx;
+}
+.bottom-btn.active {
+  background-color: #436C85;
+  color: #ffffff;
+  font-weight: bold;
+  box-shadow: 0 6rpx 16rpx rgba(67, 108, 133, 0.3);
+  border: none;
+}
+
+/* ★ 子菜单核心悬浮逻辑 */
+.sub-menu {
+  position: absolute;
+  left: 0;
+  bottom: 110%; /* 精确悬浮在按钮上方 */
+  width: calc(50% - 15rpx); /* 对齐左侧第一个按钮宽度 */
+  display: flex;
+  flex-direction: column;
+  gap: 16rpx;
   
-  /* ================= 顶部控制台 ================= */
-  .top-console {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 20rpx;
-    /* 保证层级，悬浮在内容之上 */
-    z-index: 10; 
-  }
-  
-  .top-btn {
-    background-color: #ffffff;
-    padding: 16rpx 40rpx;
-    border-radius: 12rpx;
-    font-size: 28rpx;
-    font-weight: bold;
-    color: #333;
-    box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05);
-    border: 2rpx solid #eaeaea;
-  }
-  
-  /* ================= 中间动态内容区 ================= */
-  .main-display-area {
-    flex: 1; /* 核心：吸取上下两端剩下的所有可用空间 */
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 20rpx;
-    background-color: #e8ebf0; /* 类似系统画布的高级灰底色 */
-    box-shadow: inset 0 4rpx 20rpx rgba(0,0,0,0.05);
-  }
-  
-  .content-view {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .placeholder-box {
-    text-align: center;
-    padding: 40rpx;
-  }
-  
-  .placeholder-box .title {
-    display: block;
-    font-size: 40rpx;
-    font-weight: bold;
-    color: #444;
-    margin-bottom: 20rpx;
-  }
-  
-  .placeholder-box .subtitle {
-    display: block;
-    font-size: 26rpx;
-    color: #888;
-  }
-  
-  /* ================= 底部控制台 ================= */
-  .bottom-console {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-top: 20rpx;
-    z-index: 10;
-  }
-  
-  .bottom-btn {
-    flex: 1;
-    text-align: center;
-    background-color: #ffffff;
-    padding: 24rpx 0;
-    border-radius: 12rpx;
-    font-size: 30rpx;
-    color: #333;
-    box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05);
-    transition: all 0.2s;
-  }
-  
-  /* 用 margin 隔开两个按钮 */
-  .bottom-btn:first-child {
-    margin-right: 30rpx;
-  }
-  
-  /* 选中状态的样式 */
-  .bottom-btn.active {
-    background-color: #007aff;
-    color: #ffffff;
-    font-weight: bold;
-    box-shadow: 0 6rpx 16rpx rgba(0, 122, 255, 0.3);
-    border: none;
-  }
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(30rpx);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 90;
+}
+
+.sub-menu.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.sub-btn {
+  background-color: #f7f4eb;
+  color: #436C85;
+  padding: 18rpx 0;
+  text-align: center;
+  border-radius: 12rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  border: 2rpx solid #d4c4a8;
+  box-shadow: 0 6rpx 16rpx rgba(0,0,0,0.08);
+  transition: all 0.2s;
+}
+.sub-btn.sub-active {
+  background-color: #436C85;
+  color: #ffffff;
+  font-weight: bold;
+  border-color: #436C85;
+}
