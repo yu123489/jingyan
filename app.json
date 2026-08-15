@@ -1,7 +1,9 @@
 {
   "pages": [
-    "pages/logs/logs",
+    
     "pages/shouye/shouye",
+    "pages/logs/logs",
+
     "pages/jianshang/jianshang",
     "pages/youlan/youlan",
     "pages/wode/wode",

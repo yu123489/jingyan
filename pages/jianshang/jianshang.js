@@ -12,14 +12,14 @@ Page({
 
     // 底部产品长廊的文物列表（模拟从后端获取的数据）
     exhibitList: [
-      { id: 1, name: '四海升平', image: '../../images/1.png' },
-      { id: 2, name: '天工开物', image: '../../images/2.png' },
-      { id: 3, name: '蜀盐神工', image: '../../images/3.png' },
-      { id: 4, name: 'sdfg', image: '../../images/4.png' },
-      { id: 5, name: '水asas', image: '../../images/5.png' },
-      { id: 6, name: '卤', image: '../../images/exhibit_4.png' },
-      { id: 7, name: '微澜', image: '../../images/exhibit_4.png' },
-      { id: 8, name: '卤水微澜', image: '../../images/exhibit_4.png' },
+      { id: 1, name: '四海升平', image: '../../images/3D/1.png' },
+      { id: 2, name: '天工开物', image: '../../images/3D/2.png' },
+      { id: 3, name: '蜀盐神工', image: '../../images/3D/3.png' },
+      { id: 4, name: 'sdfg', image: '../../images/3D/4.png' },
+      { id: 5, name: '水asas', image: '../../images/3D/5.png' },
+      { id: 6, name: '卤', image: '../../images/3D/6.png' },
+      { id: 7, name: '微澜', image: '../../images/3D/7.png' },
+      { id: 8, name: '卤水微澜', image: '../../images/3D/8.png' },
     ]
   },
 
