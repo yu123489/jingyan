@@ -4,16 +4,20 @@
   flex-direction: column;
   height: 100vh;
   box-sizing: border-box;
-  padding: 30rpx 30rpx 40rpx 30rpx; /* 恢复内边距，防止内容贴边 */
+  width: 100vw;
+  position: relative;
+  overflow: hidden; 
 }
 
 /* ================= 顶部按钮 ================= */
 .top-console {
+  position: absolute;
+  top: 20rpx; 
+  left: 30rpx;
+  right: 30rpx;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  margin-bottom: 20rpx;
-  z-index: 10;
+  z-index: 100; 
 }
 .top-btn {
   background-color: #ffffff;
@@ -28,13 +32,15 @@
 
 /* ================= 主展示区 ================= */
 .main-display-area {
-  flex: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  position: relative;
-  overflow: hidden;
-  border-radius: 20rpx;
-  background-color: #e8ebf0;
-  box-shadow: inset 0 4rpx 20rpx rgba(0,0,0,0.05);
+  height: 100%;
+  z-index: 1; 
+  background-color: transparent;
+  border-radius: 0; 
+  box-shadow: none; 
 }
 .content-view {
   width: 100%;
@@ -62,18 +68,18 @@
 
 /* ================= 底部容器与子菜单悬浮 ================= */
 .bottom-container {
-  position: relative;
-  width: 100%;
-  margin-top: 20rpx;
+  position: absolute;
+  bottom: 40rpx;
+  left: 30rpx;
+  right: 30rpx;
   z-index: 99;
 }
-
 .bottom-console {
   display: flex;
   justify-content: space-between;
   width: 100%;
   position: relative;
-  z-index: 100; /* 层级最高，防止被遮挡 */
+  z-index: 100; 
 }
 
 .bottom-btn {
@@ -98,11 +104,11 @@
   border: none;
 }
 
-/* ★ 子菜单核心悬浮逻辑 */
+/* 子菜单核心悬浮逻辑 */
 .sub-menu {
   position: absolute;
   left: 0;
-  bottom: 110%; /* 精确悬浮在按钮上方 */
+  bottom: 110%; 
   width: calc(50% - 15rpx); /* 对齐左侧第一个按钮宽度 */
   display: flex;
   flex-direction: column;
@@ -140,4 +146,113 @@
   color: #ffffff;
   font-weight: bold;
   border-color: #436C85;
+}
+
+/* ================= 新增：动态地图展示区样式 ================= */
+/* 外层限制框，撑满屏幕 */
+.map-board {
+  width: 100vw;
+  height: 100vh;
+  background-color: #EEE6CB; 
+  overflow: hidden; 
+}
+
+/* ★ 核心修复：滑动视口初始必须和屏幕完全一样大！ */
+.map-view {
+  width: 100vw; 
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 打包木板层 */
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 铺在最底层的背景地图 */
+.map-bg {
+  width: 100%;
+  height: 100%; 
+  display: block;
+}
+
+/* 路线图层 */
+.route-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2; 
+  pointer-events: none; 
+}
+
+.map-image {
+  width: 100%; 
+  display: block;
+}
+
+
+/* 悬浮在地图左上角的信息卡片 */
+.map-info-card {
+  position: absolute;
+  top: 150rpx;
+  left: 30rpx;
+  background: linear-gradient(135deg, #fcfbfae7 0%, #EEE6CB 100%) !important;
+  padding: 20rpx 24rpx;
+  border-radius: 12rpx;
+  border: 2rpx solid #d4c4a8;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.1);
+  max-width: 60%;
+  z-index: 10;
+  pointer-events: none; 
+}
+
+.info-title {
+  display: block;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #436C85; 
+  margin-bottom: 12rpx;
+}
+
+.info-desc {
+  display: block;
+  font-size: 24rpx;
+  color: #55442f;
+  line-height: 1.5;
+}
+
+/* ================= 悬浮缩放控件 ================= */
+.zoom-controls {
+  position: absolute;
+  right: 30rpx;
+  bottom: 220rpx; 
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  z-index: 100;
+}
+
+.zoom-btn {
+  width: 80rpx;
+  height: 80rpx;
+  background-color: rgba(247, 244, 235, 0.95); 
+  border-radius: 50%;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #436C85; /* 黛蓝色 */
+  border: 2rpx solid #d4c4a8;
+}
+
+.zoom-btn:active {
+  background-color: #e5dfcf; /* 点击时的反馈 */
 }
