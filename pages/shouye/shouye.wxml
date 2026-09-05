@@ -20,18 +20,24 @@
   </swiper>
 </view>
 
-<!-- 第三部分：四个圆形功能入口 -->
+<!-- 第三部分：3个圆形功能入口 -->
 <view class="nav-grid">
   <view class="grid-item" bindtap="goToFeature" data-target="yun-lv">
-    <view class="circle"></view>
+    <view class="circle">
+      <image class="circle-img" src="https://salt-miniprogram.oss-cn-chengdu.aliyuncs.com/tubiao/tubiao/yangongyunlv.png" mode="aspectFill"></image>
+    </view>
     <text>盐工韵律</text>
   </view>
   <view class="grid-item" bindtap="goToFeature" data-target="lu-xian">
-    <view class="circle"></view>
+    <view class="circle">
+      <image class="circle-img" src="https://salt-miniprogram.oss-cn-chengdu.aliyuncs.com/tubiao/tubiao/datijifen.png" mode="aspectFill"></image>
+    </view>
     <text>答题积分</text>
   </view>
   <view class="grid-item" bindtap="goToFeature" data-target="xun-bao">
-    <view class="circle"></view>
+    <view class="circle">
+      <image class="circle-img" src="https://salt-miniprogram.oss-cn-chengdu.aliyuncs.com/tubiao/tubiao/yanyunxunbao.png" mode="aspectFill"></image>
+    </view>
     <text>盐运寻宝</text>
   </view>
 </view>
@@ -51,12 +57,25 @@
   </scroll-view>
 </view>
 
-<!-- 第五部分：动态每日卡片 -->
+<!-- 每日盐识区块 -->
 <view class="daily-card-section">
-  <text class="title-icon">❖</text>
-  <text class="section-title">{{dailyTitle}}</text>
+  <view class="timeline-header">
+    <view class="title-left">
+      <text class="title-icon">❖</text>
+      <text class="section-title">{{dailyTitle}}</text>
+    </view>
+  </view>
+  
   <view class="daily-card">
-    <text class="daily-text">{{dailyContent}}</text>
+    <view class="daily-item-title">{{dailyData.title}}</view>
+    <!-- 摘要区块：采用引言卡片样式 -->
+    <view class="daily-item-summary">
+      <text class="quote-mark left">“</text>
+      <text class="summary-text">{{dailyData.summary}}</text>
+      <text class="quote-mark right">”</text>
+    </view>
+    <!-- 正文区块 -->
+    <view class="daily-item-content">{{dailyData.content}}</view>
   </view>
 </view>
 

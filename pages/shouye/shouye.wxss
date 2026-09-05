@@ -99,6 +99,18 @@
   border-radius: 50%; 
   background-color: #f0f0f0; 
   margin-bottom: 12rpx;
+  overflow: hidden; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2rpx solid #d4c4a8; 
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 新增：让图标填满圆形容器 */
+.circle-img {
+  width: 100%;
+  height: 100%;
 }
 
 .grid-item text {
@@ -108,7 +120,7 @@
   white-space: nowrap; 
 }
 
-/* --- 第四部分：横滑时空长卷（大唐古风美化版） --- */
+/* --- 第四部分：横滑时空长卷 --- */
 .ancient-timeline-card {
   background: linear-gradient(135deg, #fcfbfa 0%, #EEE6CB 100%) !important;
   border-radius: 16rpx;
@@ -135,14 +147,14 @@
 
 .title-icon {
   font-size: 28rpx;
-  color: #B73F42; /* 朱砂红点缀 */
+  color: #B73F42; 
   margin-right: 10rpx;
 }
 
 .title-text {
   font-size: 32rpx;
   font-weight: bold;
-  color: #436C85; /* 沉稳的石青蓝主标题 */
+  color: #436C85; 
   letter-spacing: 2rpx;
 }
 
@@ -165,33 +177,66 @@
   border-radius: 8rpx;
 }
 
-/* --- 第五部分：每日卡片 --- */
+/* --- 每日盐识区块重构 --- */
 .daily-card-section {
   background: linear-gradient(135deg, #fcfbfa 0%, #EEE6CB 100%) !important;
   border-radius: 16rpx;
   padding: 24rpx;
   margin-bottom: 40rpx;
-}
-
-.section-title{
-  font-size: 32rpx;
-  font-weight: bold;
-  color: #436C85; /* 沉稳的石青蓝主标题 */
-  letter-spacing: 2rpx;
+  box-shadow: 0 6rpx 16rpx rgba(67, 108, 133, 0.12);
 }
 
 .daily-card {
   width: 100%;
-  min-height: 120rpx;
   display: flex;
-  align-items: center;
-  /* background-color: #f9f9f9; */
-  border-radius: 12rpx;
-  padding: 20rpx;
+  flex-direction: column;
   box-sizing: border-box;
+  padding-top: 10rpx;
 }
-.daily-text {
-  font-size: 28rpx;
-  color: #555;
+
+/* 小标题样式 */
+.daily-item-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #8b5a2b; 
+  text-align: center;
+  margin-bottom: 24rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx dashed #d4c4a8; 
+}
+
+/* 摘要引言区块 */
+.daily-item-summary {
+  background-color: rgba(247, 237, 226, 0.7); 
+  padding: 20rpx 24rpx;
+  border-radius: 12rpx;
+  margin-bottom: 24rpx;
+  position: relative;
+  display: flex;
+  border-left: 6rpx solid #436C85; 
+}
+
+.summary-text {
+  font-size: 26rpx;
+  color: #665643;
   line-height: 1.6;
+  text-align: justify;
+}
+
+.quote-mark {
+  font-size: 36rpx;
+  color: #c2b49b;
+  font-family: serif;
+  line-height: 1;
+}
+.quote-mark.left { margin-right: 8rpx; }
+.quote-mark.right { margin-left: 8rpx; align-self: flex-end; }
+
+/* 正文样式 */
+.daily-item-content {
+  font-size: 28rpx;
+  color: #444;
+  line-height: 1.8;
+  text-align: justify; 
+  text-indent: 2em; 
 }
