@@ -44,12 +44,11 @@
   box-shadow: 0 6rpx 16rpx rgba(0, 122, 255, 0.3);
 }
 
-/* 核心 3D 模型渲染区 */
+/* 核心3D模型渲染区 */
 .model-display-area {
   position: relative; 
   width: 100%;
   height: 600rpx;
-  /* background-color: #e8ebf0; 类似工业软件的极简高级灰背景 */
   border-radius: 16rpx;
   margin-bottom: 24rpx;
   overflow: hidden;
@@ -68,20 +67,19 @@
   left: 0;
 }
 
-/* 悬浮在 3D 区域内的交互工具台 */
+/* 悬浮在3D区域内的交互工具台 */
 .model-tools {
   position: absolute;
   right: 20rpx;
   top: 20rpx;
   display: flex;
   flex-direction: column;
-  z-index: 10; /* 确保悬浮在 canvas 之上 */
+  z-index: 10; 
 }
 
 .tool-icon {
   width: 60rpx;
   height: 60rpx;
-  /* background-color: rgba(255, 255, 255, 0.8); */
   border-radius: 8rpx;
   margin-bottom: 16rpx;
   display: flex;
@@ -104,11 +102,11 @@
 
 /* 底部展品长廊样式  */
 
-/* 外层区域：控制背景与边距 */
+/* 控制背景与边距 */
 .gallery-section-new {
   width: 100%;
   background: linear-gradient(135deg, #fcfbfa 0%, #EEE6CB 100%) !important;
-  padding: 30rpx 0 30rpx 30rpx; /* 故意不留右侧内边距，让滑块能彻底贴边滑出 */
+  padding: 30rpx 0 30rpx 30rpx; 
   border-radius: 16rpx;
   margin-bottom: 40rpx;
   box-sizing: border-box;
@@ -117,10 +115,10 @@
 /* 滚动核心：强制不换行 */
 .gallery-scroll-new {
   width: 100%;
-  white-space: nowrap; /* 核心：所有子元素必须在一行 */
+  white-space: nowrap; 
 }
 
-/* 独立卡片单元：彻底隔绝 Flex 污染 */
+/* 独立卡片单元*/
 .gallery-card-new {
   display: inline-block; 
   width: 200rpx; 
@@ -129,13 +127,13 @@
   text-align: center;
 }
 
-/* 独立的图片盒子：控制缩放和边框 */
+/* 控制缩放和边框 */
 .card-image-box-new {
   width: 200rpx;
   height: 200rpx;
-  margin: 10rpx auto 16rpx auto; /* 保证盒子在卡片内居中 */
+  margin: 10rpx auto 16rpx auto;
   border-radius: 16rpx;
-  overflow: hidden; /* 防止图片溢出圆角 */
+  overflow: hidden; 
   transition: all 0.2s ease-in-out;
 }
 
@@ -146,24 +144,42 @@
   display: block;
 }
 
-/* 文本样式：允许内部文字换行 */
+/* 文本样式 */
 .card-text-new {
   display: block;
   font-size: 24rpx;
   color: #444444;
-  white-space: normal; /* 局部恢复换行能力，防止名字过长被切断 */
+  white-space: normal; 
   line-height: 1.4;
 }
 
 /* --- 选中状态高亮增强 --- */
 .active-card-new .card-image-box-new {
-  transform: scale(1.08); /* 微微放大 */
-  border: 4rpx solid #436C85; /* 增加主题色边框 */
-  box-sizing: border-box; /* 保证加了边框不改变整体尺寸 */
+  transform: scale(1.08); 
+  border: 4rpx solid #436C85; 
+  box-sizing: border-box; 
   box-shadow: 0 8rpx 16rpx rgba(0, 122, 255, 0.2);
 }
 
 .active-card-new .card-text-new {
   color: #436C85;
   font-weight: bold;
+}
+
+
+/* 详细信息文字展示区样式 */
+.detail-text-view {
+  width: 100%;
+  height: 100%;
+  padding: 40rpx;
+  box-sizing: border-box;
+  background-color: #F7F4EB;
+}
+
+.detail-content {
+  font-size: 30rpx;
+  color: #444444;
+  line-height: 1.8;
+  letter-spacing: 2rpx;
+  text-align: justify;
 }

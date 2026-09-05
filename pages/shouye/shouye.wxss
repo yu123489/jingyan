@@ -57,7 +57,7 @@
 /* --- 第二部分：动态 Banner --- */
 .banner-section {
   width: 100%;
-  height: 440rpx;
+  height: 360rpx;
   margin-bottom: 24rpx;
   border-radius: 16rpx;
   overflow: hidden; /* 保证圆角生效 */

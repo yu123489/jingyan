@@ -1,20 +1,22 @@
 <view class="container">
   
-  <!-- 页面标题 -->
   <view class="header-title">文物鉴赏</view>
 
-  <!-- 顶部模式切换按钮组 (带选中状态高亮) -->
+  <!-- 顶部模式切换按钮组-->
   <view class="button-group">
-    <view class="action-btn {{currentMode === 'ar' ? 'active-btn' : ''}}" 
-          bindtap="switchMode" data-mode="ar">AR扫展品模式</view>
+    <view class="action-btn {{currentMode === 'detail' ? 'active-btn' : ''}}" 
+          bindtap="switchMode" data-mode="detail">详细信息</view>
     <view class="action-btn {{currentMode === '3d' ? 'active-btn' : ''}}" 
           bindtap="switchMode" data-mode="3d">3D图鉴模式</view>
   </view>
 
-  <!-- 中间核心 3D 模型展示区 -->
+  <!-- 3D模型 -->
   <view class="model-display-area">
-    <!-- webgl 类型的 canvas 是渲染 3D 模型的刚需 -->
     <canvas type="webgl" id="webgl-canvas" class="webgl-canvas"></canvas>
+
+    <scroll-view wx:if="{{currentMode === 'detail'}}" scroll-y class="detail-text-view">
+      <text class="detail-content">{{currentExhibit.description || '点击下方长廊，或使用AR识别探索更多文物渊源...'}}</text>
+    </scroll-view>
     
     <!-- 这里放置 3D 模型的交互工具台 (比如缩放、旋转重置按钮) -->
     <view class="model-tools">
@@ -22,33 +24,27 @@
       <!-- <view class="tool-icon">🔄</view> -->
     </view>
 
-    <!-- 临时显示当前选中文物的名字，方便你测试联动效果 -->
+    <!-- 临时显示当前选中文物的名字，方便测试联动效果 -->
     <view class="current-exhibit-name">{{currentExhibit.name}} (加载中...)</view>
   </view>
 
   <!-- 底部交互按钮组 -->
   <view class="button-group">
     <view class="action-btn" bindtap="playAudio">语音讲解</view>
-    <view class="action-btn" bindtap="showDetails">详细信息</view>
+    <view class="action-btn" bindtap="openARCamera">AR识别</view>
   </view>
 
-<!-- 全新重构：底部展品长廊横滑区 -->
+<!-- 底部展品长廊横滑区 -->
 <view class="gallery-section-new">
-    <!-- 纯净的滚动容器，仅保留必要的布尔值开关 -->
     <scroll-view class="gallery-scroll-new" scroll-x="true" show-scrollbar="false">
-      
-      <!-- 独立的卡片单元 -->
       <view class="gallery-card-new {{currentExhibit.id === item.id ? 'active-card-new' : ''}}" 
             wx:for="{{exhibitList}}" wx:key="id" 
             bindtap="selectExhibit" data-item="{{item}}">
         
-        <!-- 独立的图片盒子 -->
         <view class="card-image-box-new">
-          <!-- 预留真实的图片渲染位置 -->
           <image class="card-image-new" src="{{item.image}}" mode="aspectFill"></image>
         </view>
         
-        <!-- 独立的文本容器 -->
         <text class="card-text-new">{{item.name}}</text>
         
       </view>

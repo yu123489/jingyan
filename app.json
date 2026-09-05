@@ -30,26 +30,26 @@
       {
         "pagePath": "pages/shouye/shouye",
         "text": "首页",
-        "iconPath": "images/shouye.png",
-        "selectedIconPath": "images/shouye_select.png"
+        "iconPath": "images/button/shouye.png",
+        "selectedIconPath": "images/button/shouye_select.png"
       },
       {
         "pagePath": "pages/jianshang/jianshang",
         "text": "鉴赏",
-        "iconPath": "images/jianshang.png",
-        "selectedIconPath": "images/jianshang_select.png"
+        "iconPath": "images/button/jianshang.png",
+        "selectedIconPath": "images/button/jianshang_select.png"
       },
       {
         "pagePath": "pages/youlan/youlan",
         "text": "游览",
-        "iconPath": "images/youlan.png",
-        "selectedIconPath": "images/youlan_select.png"
+        "iconPath": "images/button/youlan.png",
+        "selectedIconPath": "images/button/youlan_select.png"
       },
       {
         "pagePath": "pages/wode/wode",
         "text": "我的",
-        "iconPath": "images/wode.png",
-        "selectedIconPath": "images/wode_select.png"
+        "iconPath": "images/button/wode.png",
+        "selectedIconPath": "images/button/wode_select.png"
       }
     ]
   },

@@ -15,14 +15,14 @@ Page({
     },
 
     routeImages: {
-      'all': '/images/youlan/川盐古道.png',
-      'route1': '/images/youlan/川黔.png', // 川黔古道
-      'route2': '/images/youlan/川滇.png', // 川滇古道
-      'route3': '/images/youlan/川湘.png', // 川湘古道
-      'route4': '/images/youlan/川鄂.png',    // 川鄂古道
-      'route5': '/images/youlan/南丝绸.png' //南丝绸之路
+      'all': 'https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/%E5%B7%9D%E7%9B%90%E5%8F%A4%E9%81%93.png?sign=7042c2bdb7eff0f91d85778bf11f203b&t=1788607282',
+      'route1': 'https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/%E5%B7%9D%E9%BB%94.png?sign=9dad990a46e433ba1fef5cbfc8d5b572&t=1788607398', // 川黔古道
+      'route2': 'https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/%E5%B7%9D%E6%BB%87.png?sign=c6e7e19b1c129f90edede5849c7cee5e&t=1788607440', // 川滇古道
+      'route3': 'https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/%E5%B7%9D%E6%B9%98.png?sign=830cf093d4dea31c52a9aff5dae40529&t=1788607458', // 川湘古道
+      'route4': 'https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/%E5%B7%9D%E9%84%82.png?sign=8b0733a616282d705d23fdd8211b9414&t=1788607480',    // 川鄂古道
+      'route5': 'https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/%E5%8D%97%E4%B8%9D%E7%BB%B8.png?sign=c10690881bb76b66499f6ac128c4c88f&t=1788607496' //南丝绸之路
     },
-
+    
     routesData: [
       {
         routeId: 'route1', 
