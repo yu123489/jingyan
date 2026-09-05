@@ -1,4 +1,0 @@
-<view class="bottom-landscape-footer">
-  <image class="landscape-bottom-bg" src="/images/daohang.jpg" mode="aspectFill"></image>
-  <text class="footer-text">—— 寻盐记 · 传承千年井盐文脉 ——</text>
-</view>

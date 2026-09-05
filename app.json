@@ -1,9 +1,7 @@
 {
   "pages": [
-    
     "pages/shouye/shouye",
     "pages/logs/logs",
-
     "pages/jianshang/jianshang",
     "pages/youlan/youlan",
     "pages/wode/wode",
@@ -16,9 +14,7 @@
     "pages/collection/collection",
     "pages/service/service",
     "pages/achievements/achievements",
-    "pages/settings/settings",
-    "pages/topBar/topBar",
-    "pages/components/bottomBar/bottomBar"
+    "pages/settings/settings"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -12,13 +12,34 @@
     <!-- 动态地图展示区 -->
     <view class="content-view" wx:if="{{currentTab === 'gudao'}}">
       
-     <!-- ★ 严格绑定布尔值：scale-area="{{true}}" -->
      <movable-area class="map-board" scale-area="{{true}}">
-        <!-- ★ 绑定我们刚刚写的 scaleValue 和 onScale -->
         <movable-view class="map-view" direction="all" scale="{{true}}" scale-min="{{1}}" scale-max="{{4}}" scale-value="{{scaleValue}}" bindscale="onScale">
           <view class="map-wrapper">
-            <image class="map-bg" src="/images/youlan/背景.png" mode="aspectFit"></image>
-            <view class="route-layer" wx:if="{{currentSubTab === 'route1'}}"></view>
+            <!-- 背景  -->
+            <image class="layer-bg" src="/images/youlan/背景.png" mode="aspectFit"></image>
+  
+            <!--地图轮廓 -->
+            <image class="layer-outline" src="/images/youlan/地图背景.png"   mode="aspectFit"></image>
+  
+            <!-- 古道路线与打卡点标注  -->
+            <image class="layer-route" src="{{routeImages[currentSubTab]}}" mode="aspectFit" wx:if="{{currentTab === 'gudao'}}"></image>
+
+            <!-- 动态文字与打卡点 -->
+            <block wx:for="{{routesData}}" wx:key="routeId" wx:for-item="route">
+  
+              <!-- 核心逻辑：只有在“路线全览”或者“当前选中路线”时，才渲染这组点位 -->
+              <block wx:if="{{currentSubTab === 'all' || currentSubTab === route.routeId}}">
+    
+                <!-- 第二层循环：渲染该路线下的所有具体地点 -->
+                <view wx:for="{{route.points}}" wx:key="name" wx:for-item="point" class="point-marker {{point.textPos || 'pos-bottom'}}" style="top: {{point.top}}; left: {{point.left}};" bindtap="handlePointClick" data-point="{{point}}">
+      
+                  <!-- 统一读取外层 route 的 color -->
+                  <view class="point-dot" style="background-color: {{route.color}};"></view> 
+                  <text class="point-text">{{point.name}}</text>
+      
+                </view>
+              </block>
+            </block>
           </view>
         </movable-view>
       </movable-area>
@@ -48,12 +69,15 @@
   <!-- 底部控制区（包含滑出菜单和大按钮） -->
   <view class="bottom-container">
     
-    <!-- 悬浮的子菜单：四个古道分支 -->
+    <!-- 悬浮的子菜单：5个古道分支 -->
     <view class="sub-menu {{showSubMenu ? 'show' : ''}}">
+      <view class="sub-btn {{currentSubTab === 'all' ? 'sub-active' : ''}}" bindtap="switchSubTab" data-sub="all" data-name="川盐古道">路线全览</view>
+
       <view class="sub-btn {{currentSubTab === 'route1' ? 'sub-active' : ''}}" bindtap="switchSubTab" data-sub="route1" data-name="川黔古道">川黔古道</view>
       <view class="sub-btn {{currentSubTab === 'route2' ? 'sub-active' : ''}}" bindtap="switchSubTab" data-sub="route2" data-name="川滇古道">川滇古道</view>
       <view class="sub-btn {{currentSubTab === 'route3' ? 'sub-active' : ''}}" bindtap="switchSubTab" data-sub="route3" data-name="川湘古道">川湘古道</view>
       <view class="sub-btn {{currentSubTab === 'route4' ? 'sub-active' : ''}}" bindtap="switchSubTab" data-sub="route4" data-name="川鄂古道">川鄂古道</view>
+      <view class="sub-btn {{currentSubTab === 'route5' ? 'sub-active' : ''}}" bindtap="switchSubTab" data-sub="route5" data-name="南丝绸之路">南丝绸之路</view>
     </view>
 
     <!-- 底部两个常驻的大按钮 -->
