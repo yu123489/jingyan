@@ -110,7 +110,6 @@
 
 /* --- 第四部分：横滑时空长卷（大唐古风美化版） --- */
 .ancient-timeline-card {
-  /* 运用大唐米色底纹与精致的石青蓝边框 */
   background: linear-gradient(135deg, #fcfbfa 0%, #EEE6CB 100%) !important;
   border-radius: 16rpx;
   padding: 24rpx;
@@ -147,16 +146,6 @@
   letter-spacing: 2rpx;
 }
 
-.title-right {
-  font-size: 24rpx;
-  color: #B73F42; /* 朱砂红印章风小标 */
-  font-weight: 500;
-  letter-spacing: 2rpx;
-  background-color: #f7ede2;
-  padding: 4rpx 12rpx;
-  border-radius: 4rpx;
-  border: 1rpx solid #e6d2be;
-}
 
 /* 横滑区域滚动框 */
 .scroll-area {

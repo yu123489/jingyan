@@ -43,12 +43,11 @@
       <text class="title-icon">❖</text>
       <text class="title-text">盐脉微纪元</text>
     </view>
-    <text class="title-right">【 历史长卷 】</text>
   </view>
   
   <!-- 下方可自由横滑的图片容器 -->
   <scroll-view class="scroll-area" scroll-x="true" enhanced="true" show-scrollbar="false">
-    <image class="long-image" src="../../images/屏幕截图 2026-08-09 140829.png" mode="heightFix"></image>
+    <image class="long-image" src="../../images/pic.jpg" mode="heightFix"></image>
   </scroll-view>
 </view>
 
@@ -56,7 +55,6 @@
 <view class="daily-card-section">
   <text class="title-icon">❖</text>
   <text class="section-title">{{dailyTitle}}</text>
-  <image class="section-image" src="https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/82878eb1d5a43385e8933be6516f9112.jpg?sign=d173f088f4e38a69f18dd283e194ec33&t=1788607864" mode="widthFix"></image>
   <view class="daily-card">
     <text class="daily-text">{{dailyContent}}</text>
   </view>
