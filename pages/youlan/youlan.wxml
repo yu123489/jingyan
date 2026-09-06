@@ -14,12 +14,12 @@
       
      <movable-area class="map-board" scale-area="{{true}}">
         <movable-view class="map-view" direction="all" scale="{{true}}" scale-min="{{1}}" scale-max="{{4}}" scale-value="{{scaleValue}}" bindscale="onScale">
-          <view class="map-wrapper">
+          <view class="map-wrapper" >
             <!-- 背景  -->
-            <image class="layer-bg" src="https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/youlan/%E8%83%8C%E6%99%AF.png?sign=7ce10bc4c97d5c7d5c9e4828e01768da&t=1788611192" mode="aspectFit"></image>
+            <image class="layer-bg" src="https://salt-miniprogram.oss-cn-chengdu.aliyuncs.com/routes/%E8%83%8C%E6%99%AF.png" mode="aspectFit"></image>
   
             <!--地图轮廓 -->
-            <image class="layer-outline" src="https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/youlan/%E5%9C%B0%E5%9B%BE%E8%83%8C%E6%99%AF.png?sign=4d8b002b8988b2e3f5c3bcb3eaba3bc1&t=1788611211"   mode="aspectFit"></image>
+            <image class="layer-outline" src="https://salt-miniprogram.oss-cn-chengdu.aliyuncs.com/routes/%E5%9C%B0%E5%9B%BE%E8%83%8C%E6%99%AF.png"   mode="aspectFit"></image>
   
             <!-- 古道路线与打卡点标注  -->
             <image class="layer-route" src="{{routeImages[currentSubTab]}}" mode="aspectFit" wx:if="{{currentTab === 'gudao'}}"></image>

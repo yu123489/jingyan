@@ -1,0 +1,17 @@
+<xr-scene disable-scroll="true" style="width: 100%; height: 100%; display: block;">
+  <xr-assets>
+    <xr-asset-load type="gltf" asset-id="{{modelId}}" src="{{modelUrl}}" />
+  </xr-assets>
+  
+  <!-- 核心修改 1：使用 node-id，并且把目标 target 设定为下方的 model-node -->
+  <xr-camera node-id="camera" clear-color="0.96 0.95 0.92 1" position="0 2 8" target="model-node" camera-orbit-control/>
+  
+  <xr-light type="ambient" color="1 1 1" intensity="1.5" />
+  <xr-light type="directional" rotation="40 0 0" color="1 1 1" intensity="2" />
+  
+  <!-- 核心修改 2：用 xr-node 包裹模型，提供一个绝对稳定的三维锚点供相机聚焦 -->
+  <xr-node node-id="model-node">
+    <!-- 这里我先把 scale 恢复到 1 1 1，方便排查尺寸问题 -->
+    <xr-gltf model="{{modelId}}" position="0 0 0" scale="1 1 1" rotation="0 0 0" />
+  </xr-node>
+</xr-scene>

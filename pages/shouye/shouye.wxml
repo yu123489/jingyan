@@ -53,7 +53,7 @@
   
   <!-- 下方可自由横滑的图片容器 -->
   <scroll-view class="scroll-area" scroll-x="true" enhanced="true" show-scrollbar="false">
-    <image class="long-image" src="https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/shouye/pic.jpg?sign=60c13e702244bdf6a1c9bdf7232f99ac&t=1788670091" mode="heightFix"></image>
+    <image class="long-image" src="https://salt-miniprogram.oss-cn-chengdu.aliyuncs.com/pic.jpg" mode="heightFix"></image>
   </scroll-view>
 </view>
 

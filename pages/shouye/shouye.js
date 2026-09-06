@@ -126,7 +126,7 @@ Page({
     });
 
     // 以下保留您原有的地图定位初始化逻辑
-    LocationSkill.init('UJABZ-UFGRQ-I5352-2DOMW-TBBFQ-Y3BD2');
+    LocationSkill.init('D7FBZ-PP5CU-CMNVT-GU6U5-EN5MV-IAFAZ');
     this.requestLocation();
 
   },
@@ -134,9 +134,30 @@ Page({
   // 触发定位（代码极大简化）
   requestLocation() {
     wx.showLoading({ title: '寻迹中...' });
+    
     LocationSkill.getCurrentLocation((err, locationName) => {
       wx.hideLoading();
-      this.setData({ locationName: locationName });
+      
+      if (err) {
+        console.error('获取定位失败:', err);
+        // 如果失败，将界面状态设置为明确的“定位失败”
+        this.setData({ locationName: '定位失败' });
+        
+        // 弹出授权引导，防止用户之前手滑点了拒绝
+        wx.showModal({
+          title: '定位失败',
+          content: '请确认您已授权小程序获取位置信息，并开启了手机的定位服务。是否前往设置页查看？',
+          success: (res) => {
+            if (res.confirm) {
+              wx.openSetting(); // 主动跳转到小程序的权限设置页
+            }
+          }
+        });
+      } else if (locationName) {
+        // 成功获取到位置
+        this.setData({ locationName: locationName });
+        wx.showToast({ title: '定位成功', icon: 'success' });
+      }
     });
   },
 

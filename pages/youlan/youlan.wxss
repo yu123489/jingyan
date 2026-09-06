@@ -157,21 +157,24 @@
 }
 
 .map-view {
-  width: 100vw; 
-  height: 100vh; 
+  width: 390px; 
+  height: 844px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* 打包木板层 */
+
+/* 打包木板层：设定一个与您地图图片比例一致的基准大小，或者固定铺满 */
 .map-wrapper {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 420px;
+  height: 670px;
+  max-width: 500px; 
+  margin: auto;
 }
 
-/* 统一定义三层图片：占满容器并绝对定位 */
+/* 统一定义三层图片：使用 width: 100%; height: 100%; 配合 object-fit 确保无留白贴合 */
 .layer-bg, .layer-outline, .layer-route {
   position: absolute;
   top: 0;
@@ -179,23 +182,8 @@
   width: 100%;
   height: 100%;
   display: block;
-}
+  object-fit: contain;
 
-/* 底层羊皮纸 */
-.layer-bg {
-  z-index: 1;
-}
-
-/* 中层省份轮廓 */
-.layer-outline {
-  z-index: 2;
-  pointer-events: none; 
-}
-
-/* 顶层路线动态层 */
-.layer-route {
-  z-index: 3;
-  pointer-events: none; 
 }
 
 .map-image {

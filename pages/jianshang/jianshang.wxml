@@ -10,22 +10,34 @@
           bindtap="switchMode" data-mode="3d">3D图鉴模式</view>
   </view>
 
-  <!-- 3D模型 -->
+  <!-- 3D模型与详情展示区 -->
   <view class="model-display-area">
-    <canvas type="webgl" id="webgl-canvas" class="webgl-canvas"></canvas>
-
-    <scroll-view wx:if="{{currentMode === 'detail'}}" scroll-y class="detail-text-view">
-      <text class="detail-content">{{currentExhibit.description || '点击下方长廊，或使用AR识别探索更多文物渊源...'}}</text>
-    </scroll-view>
     
-    <!-- 这里放置 3D 模型的交互工具台 (比如缩放、旋转重置按钮) -->
-    <view class="model-tools">
-      <!-- <view class="tool-icon">🔍</view> -->
-      <!-- <view class="tool-icon">🔄</view> -->
-    </view>
+    <!-- 3D 模式：直接在页面内写 xr-scene，不通过组件中转 -->
+    <xr-scene wx:if="{{currentMode === '3d' && currentExhibit.model_url && showScene}}" 
+              class="webgl-canvas" 
+              wx:key="id"
+              disable-scroll="true">
+      <xr-assets>
+        <xr-asset-load type="gltf" asset-id="artifact-model" src="{{currentExhibit.model_url}}" />
+      </xr-assets>
+      
+      <xr-camera id="camera" node-id="camera" clear-color="0.96 0.95 0.92 1" position="0 2 6" target="model-node" camera-orbit-control/>
+      <xr-light type="ambient" color="1 1 1" intensity="1.5" />
+      <xr-light type="directional" rotation="40 0 0" color="1 1 1" intensity="2" />
+      
+      <xr-node node-id="model-node">
+        <xr-gltf model="artifact-model" position="0 0 0" scale="1 1 1" rotation="0 0 0" />
+      </xr-node>
+    </xr-scene>
 
-    <!-- 临时显示当前选中文物的名字，方便测试联动效果 -->
-    <view class="current-exhibit-name">{{currentExhibit.name}} (加载中...)</view>
+    <!-- 详情模式：展示文字 -->
+    <scroll-view wx:if="{{currentMode === 'detail'}}" scroll-y class="detail-text-view">
+      <text class="detail-content">{{currentExhibit.description || '点击下方长廊探索更多文物渊源...'}}</text>
+    </scroll-view>
+
+    <!-- 底部悬浮显示文物名称 -->
+    <view class="current-exhibit-name">{{currentExhibit.name}}</view>
   </view>
 
   <!-- 底部交互按钮组 -->
@@ -34,8 +46,8 @@
     <view class="action-btn" bindtap="openARCamera">AR识别</view>
   </view>
 
-<!-- 底部展品长廊横滑区 -->
-<view class="gallery-section-new">
+  <!-- 底部展品长廊横滑区 -->
+  <view class="gallery-section-new">
     <scroll-view class="gallery-scroll-new" scroll-x="true" show-scrollbar="false">
       <view class="gallery-card-new {{currentExhibit.id === item.id ? 'active-card-new' : ''}}" 
             wx:for="{{exhibitList}}" wx:key="id" 
@@ -46,9 +58,7 @@
         </view>
         
         <text class="card-text-new">{{item.name}}</text>
-        
       </view>
-
     </scroll-view>
   </view>
 

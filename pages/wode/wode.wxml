@@ -3,7 +3,7 @@
   <!-- 顶部：用户基本信息区 -->
   <!-- 点击整个区域都可以跳转到修改资料页 -->
   <view class="user-info-section" bindtap="navigateTo" data-url="/pages/profile/profile">
-    <image class="avatar" src="{{userInfo.avatarUrl || '../../images/default_avatar.png'}}" mode="aspectFill"></image>
+    <image class="avatar" src="{{userInfo.avatarUrl || 'https://salt-miniprogram.oss-cn-chengdu.aliyuncs.com/touxiang.png'}}" mode="aspectFill"></image>
     <view class="user-details">
       <text class="username">{{userInfo.nickName || '点击登录/注册'}}</text>
     </view>

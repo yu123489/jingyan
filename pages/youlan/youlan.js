@@ -15,12 +15,12 @@ Page({
     },
 
     routeImages: {
-      'all': 'https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/youlan/%E5%B7%9D%E7%9B%90%E5%8F%A4%E9%81%93.png?sign=741b403cf9c81c89550084476959b431&t=1788611157',
-      'route1': 'https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/youlan/%E5%B7%9D%E9%BB%94.png?sign=dda2c4b9a416ff215564ae6322af46be&t=1788611245', // 川黔古道
-      'route2': 'https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/youlan/%E5%B7%9D%E6%BB%87.png?sign=6baee1ece59ac77f7fd035460e7cb1d1&t=1788611271', // 川滇古道
+      'all': 'https://salt-miniprogram.oss-cn-chengdu.aliyuncs.com/routes/%E5%B7%9D%E7%9B%90%E5%8F%A4%E9%81%93.png',
+      'route1': 'https://salt-miniprogram.oss-cn-chengdu.aliyuncs.com/routes/%E5%B7%9D%E9%BB%94.png', // 川黔古道
+      'route2': 'https://salt-miniprogram.oss-cn-chengdu.aliyuncs.com/routes/%E5%B7%9D%E6%BB%87.png', // 川滇古道
       'route3': 'https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/youlan/%E5%B7%9D%E6%B9%98.png?sign=3bcf658e0508090d397b4608331100e4&t=1788611288', // 川湘古道
-      'route4': 'https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/youlan/%E5%B7%9D%E9%84%82.png?sign=00acec65191230661041116e53ac563f&t=1788611315',    // 川鄂古道
-      'route5': 'https://636c-cloud1-d7gh3n5sda4d060b9-1481889552.tcb.qcloud.la/youlan/%E5%8D%97%E4%B8%9D%E7%BB%B8.png?sign=f7d9cabc8fc32e5ed2c5fa70988207b5&t=1788611337' //南丝绸之路
+      'route4': 'https://salt-miniprogram.oss-cn-chengdu.aliyuncs.com/routes/%E5%B7%9D%E9%84%82.png',    // 川鄂古道
+      'route5': 'https://salt-miniprogram.oss-cn-chengdu.aliyuncs.com/routes/%E5%8D%97%E4%B8%9D%E7%BB%B8.png' //南丝绸之路
     },
     
     routesData: [
